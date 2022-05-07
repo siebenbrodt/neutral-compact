@@ -1,0 +1,36 @@
+@import "library.css";
+
+@-moz-document url("chrome://devtools/content/styleeditor/index.xhtml"){
+.splitview-nav label[value="userChrome.css"]{ background-color: red } /* highlighting filename to find it easier in devtools during live-testing */
+}
+
+@-moz-document url-prefix("about:"), url-prefix("chrome://"), url-prefix("resource://"){
+	:root {
+	--in-content-page-color: rgb(0,0,0) !important; /* rgb(21,20,26) */
+	--in-content-deemphasized-text: rgb(93,93,93) !important; /* rgb(91,91,102) */
+	--in-content-box-background-odd: : rgba(0,0,0,0.05) !important; /* rgba(12,12,13,0.05); ( grey 90 a05 ) */
+	--in-content-box-info-background: #f1f1f1 !important; /*  #f0f0f4 */
+	--in-content-icon-color: rgb(93,93,93) !important; /* rgb(91,91,102) */
+	--in-content-border-color: #d7d7d7 !important; /* #d7d7db */
+	--in-content-button-background: rgba(208,208,208,.33) !important; /* rgba(207,207,216,.33) */
+	--in-content-button-background-hover: rgba(208,208,208,.66) !important; /* rgba(207,207,216,.66) */
+	--in-content-button-background-active: : rgb(208,208,208) !important; /* rgb(207,207,216) */
+	--in-content-primary-button-text-color: rgb(252,252,252) !important; /* rgb(251,251,254) */
+	--in-content-table-background: #f9f9f9 !important; /* #f8f8fa */
+	--grey-30: #d7d7d7 !important; /* #d7d7db */
+	--grey-60: #4b4b4b !important; /* 4a4a4f */
+	--grey-90-a10: rgba(12,12,12,0.1) !important; /* rgba(12,12,13,0.1) */
+	--grey-90-a20: rgba(12,12,12,0.2) !important;
+	--grey-90-a30: rgba(12,12,12,0.3) !important;
+	--grey-90-a50: rgba(12,12,12,0.5) !important;
+	--grey-90-a60: rgba(12,12,12,0.6) !important;
+	}
+
+/* newtab */
+
+  body{
+	--newtab-background-color: #F9F9F9 !important; /* #F9F9FB */
+	--newtab-text-primary-color: #000000 !important; /* #15141A */
+	--newtab-text-emphasis-text-color: #0C0C0C !important; /* #0C0C0D */
+  }
+}

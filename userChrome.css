@@ -1,0 +1,263 @@
+@import "library.css";
+
+/* Prerequisites: Compact mode + Light theme*/
+
+/** White flash **/
+browser[type="content-primary"],
+browser[type="content"],
+#tabbrowser-tabpanels {
+  background-color: #BCBCBC !important;
+}
+
+/** Neutral colors without bluish tint **/
+/* True black font */
+html:root,
+window:root,
+panel,
+menupopup,
+popupnotification,
+tooltip,
+panelview,
+label.toolbarbutton-text,
+label.tab-text.tab-label,
+#main-menubar {
+  color: #000000 !important;
+}
+/* Neutralized variables - Same brightness without bluish tint */
+:host,
+:root {
+  --arrowpanel-border-color: rgb(241,241,241) !important; /* rgb(240,240,244) */
+  --arrowpanel-color: rgba(0,0,0,1) !important;
+  --autocomplete-popup-background: rgb(255,255,255) !important;
+  --autocomplete-popup-color: rgb(0,0,0) !important;
+  --autocomplete-popup-highlight-background: #e1e1e1 !important; /* #e0e0e6 */
+  --autocomplete-popup-highlight-background: rgb(224,224,224) !important;
+  --autocomplete-popup-highlight-color: rgb(0,0,0) !important;
+  --autocomplete-popup-highlight-color: rgb(0,0,0) !important; /* rgb(21,20,26) */
+  --autocomplete-popup-hover-background: rgb(241,241,241) !important; /* rgb(240,240,244) */
+  --autocomplete-popup-separator-color: rgb(241,241,241) !important; /* rgb(240,240,244) */
+  --button-active-bgcolor: #d9d9d9 !important;
+  --button-bgcolor: #F0F0F0 !important;
+  --button-color: #000000 !important;
+  --button-hover-bgcolor: #E0E0E0 !important;
+  --buttons-primary-button-color: #FBFBFB !important;
+  --checkbox-border-color: rgb(148,148,148) !important; /* rgb(143,143,157) */
+  --checkbox-checked-color: rgb(252,252,252) !important; /* rgb(251,251,254) */
+  --checkbox-unchecked-active-bgcolor: rgb(208,208,208) !important; /* rgb(207,207,216) */
+  --checkbox-unchecked-bgcolor: #F1F1F1 !important;
+  --checkbox-unchecked-bgcolor: rgb(240,240,240) !important;
+  --checkbox-unchecked-hover-bgcolor: rgb(225,225,225) !important; /* rgb(224,224,230) */
+  --chrome-content-separator-color: rgb(204,204,204) !important;
+  --chrome-content-separator-color: rgb(204,204,204) !important;
+  --default-arrowpanel-color: rgb(0,0,0) !important; /* rgb(21,20,26) */
+  --grey-20: #ededed !important;
+  --grey-30: #d7d7d7 !important; /* #d7d7db */
+  --grey-40: #b1b1b1 !important;
+  --grey-60: #4b4b4b !important; /* #4a4a4f */
+  --grey-90-a10: rgba(12,12,12,0.1) !important;
+  --grey-90-a20: rgba(12,12,12,0.2) !important;
+  --grey-90-a30: rgba(12,12,12,0.3) !important;
+  --grey-90-a50: rgba(12,12,12,0.5) !important;
+  --grey-90-a60: rgba(12,12,12,0.6) !important;
+  --in-content-border-color: #d7d7d7 !important; /* #d7d7db */
+  --in-content-box-background-odd: rgba(0,0,0,0.05) !important; /* rgba(12,12,13,0.05); ( grey 90 a05 ) */
+  --in-content-box-border-color: rgb(148,148,148) !important; /* rgb(143,143,157) */
+  --in-content-box-info-background: #f0f0f0 !important; /* #f0f0f4 */
+  --in-content-button-background: rgba(208,208,208,0.33) !important; /* rgba(207,207,216,.33) */
+  --in-content-button-background-hover: rgba(208,208,208,0.66) !important; /* rgba(207,207,216,.66) */
+  --in-content-button-background-active: rgb(208,208,208) !important; /* rgb(207,207,216) */
+  --in-content-deemphasized-text: rgb(93,93,93) !important; /* rgb(91,91,102) */
+  --in-content-dialog-header-background: #f1f1f1 !important;
+  --in-content-icon-color: rgb(93,93,93) !important; /* rgb(91,91,102) */
+  --in-content-page-color: rgb(0,0,0) !important; /* rgb(21,20,26) */
+  --in-content-primary-button-text-color: rgb(251,251,251) !important; /* rgb(251,251,254) */
+  --in-content-table-background: #f9f9f9 !important; /* #f8f8fa */
+  --in-content-table-border-dark-color: #d1d1d1 !important;
+  --input-border-color: rgb(148,148,148) !important; /* rgb(143,143,157) */
+  --input-color: rgb(0,0,0) !important; /* rgb(21,20,26) */
+  --lwt-accent-color: rgb(240,240,240) !important;
+  --lwt-selected-tab-background-color: rgb(255,255,255) !important;
+  --lwt-tab-text: rgb(0,0,0) !important;
+  --lwt-text-color: rgba(0,0,0) !important;
+  --lwt-toolbar-field-background-color: rgb(240,240,240) !important;
+  --lwt-toolbar-field-border-color: rgba(0,0,0,0) !important;
+  --lwt-toolbar-field-color: rgba(0,0,0,1) !important;
+  --lwt-toolbar-field-focus-color: rgba(0,0,0,1) !important;
+  --lwt-toolbar-field-focus: rgba(255,255,255,1) !important;
+  --panel-description-color: rgba(0,0,0,0.7) !important;
+  --panel-disabled-color: rgba(0,0,0,0.5) !important;
+  --panel-separator-color: hsla(210,0%,10%,.14) !important;
+  --panel-shortcut-color: rgb(93,93,93) !important; /* rgb(91,91,102) */
+  --tab-icon-overlay-fill: rgb(93,93,93) !important; /* rgb(91,91,102) */
+  --tab-line-color: rgba(129,129,129,0.9) !important; /*  rgba(128,128,142,0.9) */
+  --toolbar-bgcolor: rgba(249,249,249,1) !important;
+  --toolbar-color: rgb(0,0,0) !important; /* rgb(21,20,26) */
+  --toolbar-field-non-lwt-bgcolor: rgb(241,241,241) !important; /* rgb(240,240,244) */
+  --toolbar-field-non-lwt-color: rgb(0,0,0) !important; /* rgb(21,20,26) */
+  --toolbar-non-lwt-bgcolor: #f9f9f9 !important; /* #f9f9fb */
+  --toolbar-non-lwt-textcolor: rgb(0,0,0) !important; /* rgb(21,20,26) */
+  --toolbarbutton-icon-fill: rgb(93,93,93) !important; /* rgb(91,91,102) */
+  --urlbar-popup-action-color: rgb(93,93,93) !important; /* rgb(91,91,102) */
+}
+
+/* Popup menu (variables --menu-background-color --menu-color --menu-border-color --menuitem-hover-background-color don't work?) */
+arrowscrollbox.menupopup-arrowscrollbox {
+  background-color: rgb(249,249,249) !important; /* rgb(249,249,251); popup.css:53 */
+  color: rgb(0,0,0) !important;
+  border-color: rgb(208,208,208) !important;
+}
+menuseparator {
+  border-top-color: rgb(208,208,208) !important; /* rgb(207,207,216) menu.css:392 */
+}
+/* Popup menu hover highlight */
+menu[_moz-menuactive="true"]:not([disabled="true"]),
+menuitem[_moz-menuactive="true"]:not([disabled="true"]) {
+    background-color: rgb(225,225,225) !important; /* rgb(224,224,230) --menuitem-hover-background-color menu.css */
+    color: rgb(0,0,0) !important; /* --menu-color menu.css */
+}
+/* Popup menu hover highlight disabled items */
+menu[_moz-menuactive="true"],
+menuitem[_moz-menuactive="true"] {
+  background-color: rgb(225,225,225) !important;
+  color: rgb(152,152,152) !important;
+}
+
+
+/* Root - Reduce Padding */
+  :root[uidensity=compact] {
+    /* Tool Bar */
+    --toolbarbutton-outer-padding: 2px !important; /* Original: 3px,General is 2px */
+    /* Panel - no need since FF93 */
+  /*  --arrowpanel-menuitem-padding: 3px !important; /* Original: 8px */
+  }
+.toolbarbutton-1 {
+  margin-bottom: 0px !important;
+}
+
+/** Tabs panel background **/
+#TabsToolbar,#browser-panel {
+ background-color: #BCBCBC !important;
+}
+
+/* Match active tabs with toolbar colour */
+	#tabbrowser-tabs:not([movingtab]) >#tabbrowser-arrowscrollbox >.tabbrowser-tab >.tab-stack >.tab-background[multiselected="true"],
+	#tabbrowser-tabs:not([movingtab]) >#tabbrowser-arrowscrollbox >.tabbrowser-tab >.tab-stack >.tab-background[selected="true"] {
+		background-image: none !important; background-color: var(--toolbar-bgcolor) !important;
+}
+
+/** Color line for Container Tab**/
+#tabbrowser-tabs .tab-context-line {
+  display: none;
+}
+  .tab-content::after {
+    display: inline-block;
+    width: -moz-available;
+    height: 2px;
+    position: absolute;
+    bottom: 4px;
+    left: 0;
+    background: var(--identity-icon-color);
+     /*opacity: 0.5;*/
+    content: '';
+    margin: 0 var(--inline-tab-padding);
+  }
+  :root[uidensity="compact"] .tab-content::after {
+    bottom: 1px;
+  }
+  :root[uidensity="touch"] .tab-content::after {
+    bottom: 6px;
+}
+
+/** Reattach tabs **/
+.tab-background {
+	margin: 0 !important;
+	border-bottom-left-radius: 0 !important;
+	border-bottom-right-radius: 0 !important;
+  	--tab-border-radius: 6px; /* Original: 4px */
+}
+toolbarbutton#scrollbutton-up[part="scrollbutton-up"],
+toolbarbutton#scrollbutton-down[part="scrollbutton-down"] {
+	/* Prevent needing to alter tab height
+	 * This is for the tab scrolling buttons
+	 * The change to the tab-brackground margin
+	 * causes the border size a issue here */
+	border: none !important;
+}
+/* Selected tab shadow */
+#TabsToolbar:not([brighttext]) .tabbrowser-tab:is([visuallyselected="true"],[multiselected]) > .tab-stack > .tab-background {
+  box-shadow: 0 0 4px rgba(0,0,0,.5) !important;
+}
+
+/* Inactive tabs: Separator line style */
+.tabbrowser-tab:not([selected=true]):not([multiselected=true]):not([beforeselected-visible="true"]) .tab-background {
+    border-right: 1px solid var(--lwt-background-tab-separator-color,rgba(0,0,0,.20)) !important;
+}
+.tabbrowser-tab:not([selected=true]):not([multiselected=true]) .tab-background {
+    border-radius: 0 !important;
+}
+/* Remove padding between tabs */
+.tabbrowser-tab {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+/** URL bar **/
+#urlbar-input-container {
+  background-color: #fff !important;
+  border: 1px solid rgba(0,0,0,.25) !important;
+}
+/* urlbar shadow */
+#urlbar-background,#searchbar {
+  box-shadow: none !important;
+  border: 1px solid rgba(0,0,0,.125) !important;
+}
+
+/* Remove Multi-Containers icon from urlbar */
+#pageAction-urlbar-_testpilot-containers {
+  display: none !important
+}
+
+/* Pinned Tab - tabbrowser-arrowscrollbox overflowing */
+  #tabbrowser-tabs[positionpinnedtabs] > #tabbrowser-arrowscrollbox > .tabbrowser-tab[pinned] {
+    z-index: 0 !important;
+}
+
+:root[uidensity="compact"] .tab-close-button{
+	/* Bigger close tab button in compact mode */
+	padding: 4px !important;
+	margin: 0 !important;
+	height: 20px !important;
+	width: 20px !important;
+}
+
+#tabbrowser-tabs[closebuttons="activetab"] .tabbrowser-tab:not([selected="true"]):not([pinned]):hover .close-icon{
+	/* Show close button on hover on every tab even when tabs are low on width */
+	display: -moz-box !important;
+  }
+
+#tabbrowser-tabs .tabbrowser-tab[pending]:not([selected="true"]):not(:hover){
+	/* Distinguish between loaded and unloaded tabs */
+	opacity: 0.5;
+}
+
+/* Tighten up context menu density (FF88 was 1px) */
+menupopup > menuitem,menupopup > menu {
+  padding-block: 2px !important;
+}
+
+/*** Remove Context Menu Items ***/
+#context-sendimage,/* Email Image... */
+#context-sendvideo,/* Email Video... */
+#context-sendaudio,/* Email Audio... */
+/* Tab Context */
+#tabContextMenu #context_shareTabURL /* Share */
+{ display: none !important; }
+
+/*** Remove items from image context menu ***/
+/* Email Image... */
+#context-sendimage,
+/* Set Image as Desktop Background... (and preceding separator) */
+#context-sep-setbackground,#context-setDesktopBackground,
+/* Inspect Accessibility Properties */
+#context-inspect-a11y
+{  display: none !important; }
