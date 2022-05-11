@@ -1,11 +1,12 @@
 @import "library.css";
 
 @-moz-document url("chrome://devtools/content/styleeditor/index.xhtml"){
-.splitview-nav label[value="userChrome.css"]{ background-color: red } /* highlighting filename to find it easier in devtools during live-testing */
+.splitview-nav label[value="userChrome.css"]{ background-color: red } /* highlighting the filename to find it easier in devtools during live testing. Don't work in Ubuntu */
 }
 
 @-moz-document url-prefix("about:"), url-prefix("chrome://"), url-prefix("resource://"){
-	:root {
+ @media (prefers-color-scheme: light) {
+  :root {
 	--in-content-page-color: rgb(0,0,0) !important; /* rgb(21,20,26) */
 	--in-content-deemphasized-text: rgb(93,93,93) !important; /* rgb(91,91,102) */
 	--in-content-box-background-odd: : rgba(0,0,0,0.05) !important; /* rgba(12,12,13,0.05); ( grey 90 a05 ) */
@@ -33,4 +34,5 @@
 	--newtab-text-primary-color: #000000 !important; /* #15141A */
 	--newtab-text-emphasis-text-color: #0C0C0C !important; /* #0C0C0D */
   }
+ }
 }

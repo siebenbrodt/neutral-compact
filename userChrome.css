@@ -1,6 +1,8 @@
 @import "library.css";
 
-/* Prerequisites: Compact mode + Light theme*/
+/* Prerequisites: Compact mode + Light theme */
+
+@media (prefers-color-scheme: light) {
 
 /** White flash **/
 browser[type="content-primary"],
@@ -10,13 +12,13 @@ browser[type="content"],
 }
 
 /** Neutral colors without bluish tint **/
+
 /* True black font */
 html:root,
 window:root,
 panel,
 menupopup,
 popupnotification,
-tooltip,
 panelview,
 label.toolbarbutton-text,
 label.tab-text.tab-label,
@@ -76,6 +78,7 @@ label.tab-text.tab-label,
   --input-border-color: rgb(148,148,148) !important; /* rgb(143,143,157) */
   --input-color: rgb(0,0,0) !important; /* rgb(21,20,26) */
   --lwt-accent-color: rgb(240,240,240) !important;
+  --lwt-background-tab-separator-color: rgba(0,0,0,.2) !important;
   --lwt-selected-tab-background-color: rgb(255,255,255) !important;
   --lwt-tab-text: rgb(0,0,0) !important;
   --lwt-text-color: rgba(0,0,0) !important;
@@ -100,7 +103,7 @@ label.tab-text.tab-label,
   --urlbar-popup-action-color: rgb(93,93,93) !important; /* rgb(91,91,102) */
 }
 
-/* Popup menu (variables --menu-background-color --menu-color --menu-border-color --menuitem-hover-background-color don't work?) */
+/* Context menu (variables --menu-background-color --menu-color --menu-border-color --menuitem-hover-background-color don't work?) */
 arrowscrollbox.menupopup-arrowscrollbox {
   background-color: rgb(249,249,249) !important; /* rgb(249,249,251); popup.css:53 */
   color: rgb(0,0,0) !important;
@@ -109,29 +112,19 @@ arrowscrollbox.menupopup-arrowscrollbox {
 menuseparator {
   border-top-color: rgb(208,208,208) !important; /* rgb(207,207,216) menu.css:392 */
 }
-/* Popup menu hover highlight */
+
+/* Context menu hover highlight */
 menu[_moz-menuactive="true"]:not([disabled="true"]),
 menuitem[_moz-menuactive="true"]:not([disabled="true"]) {
-    background-color: rgb(225,225,225) !important; /* rgb(224,224,230) --menuitem-hover-background-color menu.css */
-    color: rgb(0,0,0) !important; /* --menu-color menu.css */
+  background-color: rgb(225,225,225) !important; /* rgb(224,224,230) --menuitem-hover-background-color menu.css */
+  color: rgb(0,0,0) !important; /* --menu-color menu.css */
 }
-/* Popup menu hover highlight disabled items */
+
+/* Context menu hover highlight disabled items */
 menu[_moz-menuactive="true"],
 menuitem[_moz-menuactive="true"] {
   background-color: rgb(225,225,225) !important;
   color: rgb(152,152,152) !important;
-}
-
-
-/* Root - Reduce Padding */
-  :root[uidensity=compact] {
-    /* Tool Bar */
-    --toolbarbutton-outer-padding: 2px !important; /* Original: 3px,General is 2px */
-    /* Panel - no need since FF93 */
-  /*  --arrowpanel-menuitem-padding: 3px !important; /* Original: 8px */
-  }
-.toolbarbutton-1 {
-  margin-bottom: 0px !important;
 }
 
 /** Tabs panel background **/
@@ -139,49 +132,82 @@ menuitem[_moz-menuactive="true"] {
  background-color: #BCBCBC !important;
 }
 
+/* Remove active tab stroke */
+tabs#tabbrowser-tabs {
+  --lwt-tab-line-color: none !important;
+  }
+
 /* Match active tabs with toolbar colour */
-	#tabbrowser-tabs:not([movingtab]) >#tabbrowser-arrowscrollbox >.tabbrowser-tab >.tab-stack >.tab-background[multiselected="true"],
-	#tabbrowser-tabs:not([movingtab]) >#tabbrowser-arrowscrollbox >.tabbrowser-tab >.tab-stack >.tab-background[selected="true"] {
-		background-image: none !important; background-color: var(--toolbar-bgcolor) !important;
+#tabbrowser-tabs:not([movingtab]) >#tabbrowser-arrowscrollbox >.tabbrowser-tab >.tab-stack >.tab-background[multiselected="true"],
+#tabbrowser-tabs:not([movingtab]) >#tabbrowser-arrowscrollbox >.tabbrowser-tab >.tab-stack >.tab-background[selected="true"] {
+  background-image: none !important;
+  background-color: var(--toolbar-bgcolor) !important;
 }
 
 /** Color line for Container Tab**/
 #tabbrowser-tabs .tab-context-line {
   display: none;
 }
-  .tab-content::after {
-    display: inline-block;
-    width: -moz-available;
-    height: 2px;
-    position: absolute;
-    bottom: 4px;
-    left: 0;
-    background: var(--identity-icon-color);
-     /*opacity: 0.5;*/
-    content: '';
-    margin: 0 var(--inline-tab-padding);
-  }
-  :root[uidensity="compact"] .tab-content::after {
-    bottom: 1px;
-  }
-  :root[uidensity="touch"] .tab-content::after {
-    bottom: 6px;
+
+/** URL bar **/
+#urlbar-input-container {
+  background-color: #fff !important;
+  border: 1px solid rgba(0,0,0,.25) !important;
+}
+
+/* urlbar shadow */
+#urlbar-background,#searchbar {
+  box-shadow: none !important;
+  border: 1px solid rgba(0,0,0,.125) !important;
+}
+
+}
+/* --- end of color variables --- */
+
+/* Root - Reduce Padding */
+:root[uidensity=compact] {
+  /* Tool Bar */
+  --toolbarbutton-outer-padding: 2px !important; /* Original: 3px,General is 2px */
+  /* Panel - no need since FF93 */
+  /*  --arrowpanel-menuitem-padding: 3px !important; /* Original: 8px */
+}
+.toolbarbutton-1 {
+  margin-bottom: 0px !important;
+}
+
+.tab-content::after {
+  display: inline-block;
+  width: -moz-available;
+  height: 2px;
+  position: absolute;
+  bottom: 4px;
+  left: 0;
+  background: var(--identity-icon-color);
+  /*opacity: 0.5;*/
+  content: '';
+  margin: 0 var(--inline-tab-padding);
+}
+:root[uidensity="compact"] .tab-content::after {
+  bottom: 1px;
+}
+:root[uidensity="touch"] .tab-content::after {
+  bottom: 6px;
 }
 
 /** Reattach tabs **/
 .tab-background {
-	margin: 0 !important;
-	border-bottom-left-radius: 0 !important;
-	border-bottom-right-radius: 0 !important;
-  	--tab-border-radius: 6px; /* Original: 4px */
+  margin: 0 !important;
+  border-bottom-left-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+  --tab-border-radius: 6px; /* Original: 4px */
 }
 toolbarbutton#scrollbutton-up[part="scrollbutton-up"],
 toolbarbutton#scrollbutton-down[part="scrollbutton-down"] {
-	/* Prevent needing to alter tab height
-	 * This is for the tab scrolling buttons
-	 * The change to the tab-brackground margin
-	 * causes the border size a issue here */
-	border: none !important;
+  /* Prevent needing to alter tab height
+  * This is for the tab scrolling buttons
+  * The change to the tab-brackground margin
+  * causes the border size a issue here */
+  border: none !important;
 }
 /* Selected tab shadow */
 #TabsToolbar:not([brighttext]) .tabbrowser-tab:is([visuallyselected="true"],[multiselected]) > .tab-stack > .tab-background {
@@ -190,26 +216,16 @@ toolbarbutton#scrollbutton-down[part="scrollbutton-down"] {
 
 /* Inactive tabs: Separator line style */
 .tabbrowser-tab:not([selected=true]):not([multiselected=true]):not([beforeselected-visible="true"]) .tab-background {
-    border-right: 1px solid var(--lwt-background-tab-separator-color,rgba(0,0,0,.20)) !important;
+  border-right: 1px solid var(--lwt-background-tab-separator-color) !important;
 }
 .tabbrowser-tab:not([selected=true]):not([multiselected=true]) .tab-background {
-    border-radius: 0 !important;
-}
-/* Remove padding between tabs */
-.tabbrowser-tab {
-    padding-left: 0 !important;
-    padding-right: 0 !important;
+  border-radius: 0 !important;
 }
 
-/** URL bar **/
-#urlbar-input-container {
-  background-color: #fff !important;
-  border: 1px solid rgba(0,0,0,.25) !important;
-}
-/* urlbar shadow */
-#urlbar-background,#searchbar {
-  box-shadow: none !important;
-  border: 1px solid rgba(0,0,0,.125) !important;
+/* Remove padding between tabs */
+.tabbrowser-tab {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
 }
 
 /* Remove Multi-Containers icon from urlbar */
@@ -219,30 +235,30 @@ toolbarbutton#scrollbutton-down[part="scrollbutton-down"] {
 
 /* Pinned Tab - tabbrowser-arrowscrollbox overflowing */
   #tabbrowser-tabs[positionpinnedtabs] > #tabbrowser-arrowscrollbox > .tabbrowser-tab[pinned] {
-    z-index: 0 !important;
+  z-index: 0 !important;
 }
 
 :root[uidensity="compact"] .tab-close-button{
-	/* Bigger close tab button in compact mode */
-	padding: 4px !important;
-	margin: 0 !important;
-	height: 20px !important;
-	width: 20px !important;
+  /* Bigger close tab button in compact mode */
+  padding: 4px !important;
+  margin: 0 !important;
+  height: 20px !important;
+  width: 20px !important;
 }
 
-#tabbrowser-tabs[closebuttons="activetab"] .tabbrowser-tab:not([selected="true"]):not([pinned]):hover .close-icon{
-	/* Show close button on hover on every tab even when tabs are low on width */
-	display: -moz-box !important;
-  }
-
-#tabbrowser-tabs .tabbrowser-tab[pending]:not([selected="true"]):not(:hover){
-	/* Distinguish between loaded and unloaded tabs */
-	opacity: 0.5;
+#tabbrowser-tabs[closebuttons="activetab"] .tabbrowser-tab:not([selected="true"]):not([pinned]):hover .close-icon {
+  /* Show close button on hover on every tab even when tabs are low on width */
+  display: -moz-box !important;
 }
 
-/* Tighten up context menu density (FF88 was 1px) */
-menupopup > menuitem,menupopup > menu {
-  padding-block: 2px !important;
+#tabbrowser-tabs .tabbrowser-tab[pending]:not([selected="true"]):not(:hover) {
+  /* Distinguish between loaded and unloaded tabs */
+  opacity: 0.5;
+}
+
+/* Tighten up context menu density to make it equal to the hamburger menu */
+:root:not([uidensity=touch]) menupopup > menuitem, menupopup > menu {
+  padding-block: 0.25em !important; /* 0.5em */
 }
 
 /*** Remove Context Menu Items ***/
