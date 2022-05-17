@@ -4,12 +4,12 @@
  @media (prefers-color-scheme: light) {
   :root {
    --organizer-color: rgb(0,0,0) !important; /* rgb(21,20,26) */
-   --organizer-deemphasized-color: rgb(93,93,93) !important; /* rgb(91,91,102) */
+   --organizer-deemphasized-color: rgb(92,92,92) !important; /* rgb(91,91,102) */
    --organizer-toolbar-background: rgb(249,249,249) !important; /* rgb(249,249,251) */
-   --organizer-pane-background: rgb(241,241,241) !important; /* rgb(240,240,244) */
+   --organizer-pane-background: rgb(240,240,240) !important; /* rgb(240,240,244) */
    --organizer-hover-background: rgba(208,208,208,.66) !important; /* rgba(207,207,216,.66) */
    --organizer-selected-background: rgb(208,208,208) !important; /* rgb(207,207,216) */
-   --organizer-toolbar-field-background: rgb(241,241,241) !important; /* rgb(240,240,244) */
+   --organizer-toolbar-field-background: rgb(240,240,240) !important; /* rgb(240,240,244) */
   }
  }
 }
