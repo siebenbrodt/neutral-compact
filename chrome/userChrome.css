@@ -76,7 +76,7 @@ label.tab-text.tab-label,
   --input-color: rgb(0,0,0) !important; /* rgb(21,20,26) */
   --lwt-accent-color: rgb(188,188,188) !important; /* rgb(240,240,244) - Tabs panel background - optical mid gray */
   --lwt-background-tab-separator-color: rgba(0,0,0,.2) !important;
-  --lwt-selected-tab-background-color: rgb(255,255,255) !important;
+  --lwt-selected-tab-background-color: var(--toolbar-bgcolor) !important; /* Match active tabs with toolbar colour */
   --lwt-sidebar-background-color: rgb(255,255,255) !important; /* Themed sidebars */
   --lwt-sidebar-text-color: rgb(0,0,0) !important; /* Themed sidebars */
   --lwt-tab-text: rgb(0,0,0) !important; /* rgb(21,20,26) */
@@ -117,13 +117,6 @@ label.tab-text.tab-label,
   --menu-disabled-color: rgba(0,0,0,0.4) !important; /* rgba(21,20,26,0.4) */
   --menu-border-color: rgb(208,208,208) !important; /* #cfcfd8 */
  }
-}
-
-/* Match active tabs with toolbar colour */
-#tabbrowser-tabs:not([movingtab]) >#tabbrowser-arrowscrollbox >.tabbrowser-tab >.tab-stack >.tab-background[multiselected="true"],
-#tabbrowser-tabs:not([movingtab]) >#tabbrowser-arrowscrollbox >.tabbrowser-tab >.tab-stack >.tab-background[selected="true"] {
-  background-image: none !important;
-  background-color: var(--toolbar-bgcolor) !important;
 }
 
 /** URL bar **/
