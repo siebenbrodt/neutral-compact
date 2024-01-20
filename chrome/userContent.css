@@ -16,7 +16,7 @@
 	--in-content-border-color: rgb(215,215,215) !important; /* #d7d7db */
 	--in-content-button-background: rgba(208,208,208,.33) !important; /* rgba(207,207,216,.33) */
 	--in-content-button-background-hover: rgba(208,208,208,.66) !important; /* rgba(207,207,216,.66) */
-	--in-content-button-background-active: : rgb(208,208,208) !important; /* rgb(207,207,216) */
+	--in-content-button-background-active: rgb(208,208,208) !important; /* rgb(207,207,216) */
 	--in-content-primary-button-text-color: rgb(251,251,251) !important; /* rgb(251,251,254) */
 	--in-content-table-background: rgb(248,248,248) !important; /* #f8f8fa */
 	--grey-30: rgb(215,215,215) !important; /* #d7d7db */
