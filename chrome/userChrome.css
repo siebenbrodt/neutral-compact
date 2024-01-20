@@ -93,6 +93,7 @@ label.tab-text.tab-label,
   --tab-icon-overlay-fill: rgb(92,92,92) !important; /* rgb(91,91,102) */
   --tab-line-color: rgba(129,129,129,0.9) !important; /*  rgba(128,128,142,0.9) */
   --tabpanel-background-color: rgb(249,249,249) !important; /* rgb(249,249,251) */
+  --tab-selected-bgcolor: rgb(249,249,249) !important; /* rgb(255,255,255) */
   --toolbar-bgcolor: rgba(249,249,249,1) !important;
   --toolbar-color: rgb(0,0,0) !important; /* rgb(21,20,26) */
   --toolbar-field-color: rgb(0,0,0) !important; /* rgb(21,20,26) */
